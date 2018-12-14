@@ -1,7 +1,7 @@
 # Fusion Table Searchable Map Template
 
 
-[See the working demo &raquo;](http://derekeder.github.io/FusionTable-Map-Template/)
+[See the working demo &raquo;](http://jackdougherty.github.io/FusionTable-Map-Template/)
 
 
 

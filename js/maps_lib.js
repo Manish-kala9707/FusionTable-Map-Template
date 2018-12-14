@@ -179,11 +179,12 @@
         
         //-----custom filters-----
         var type_column = "'type'";
-var searchType = type_column + " IN (-1,";
-if ( $("#cbType1").is(':checked')) searchType += "1,";
-if ( $("#cbType2").is(':checked')) searchType += "2,";
-if ( $("#cbType3").is(':checked')) searchType += "3,";
-self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
+var tempWhereClause = [];
+if ( $("#cbType1").is(':checked')) tempWhereClause.push("Healthcare");
+if ( $("#cbType2").is(':checked')) tempWhereClause.push("Property");
+if ( $("#cbType3").is(':checked')) tempWhereClause.push("Public");
+if ( $("#cbType4").is(':checked')) tempWhereClause.push("Other");
+self.whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
